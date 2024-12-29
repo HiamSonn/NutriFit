@@ -25,7 +25,7 @@ export default function MainPageLayout({ children }) {
     <html lang="en">
       <body className="flex flex-col min-h-screen">
         {/* Header */}
-        <header className="bg-white text-black p-4">
+        <header className="bg-white text-black p-4 fixed top-0 left-0 w-full z-10 shadow-md">
           <nav className="flex justify-between gap-4 px-20">
             <Link
               href="/main-page"
@@ -85,7 +85,7 @@ export default function MainPageLayout({ children }) {
         </header>
 
         {/* Main content */}
-        <main className="flex-grow p-6">{children}</main>
+        <main className="flex-grow p-6 pt-[80px]">{children}</main>
 
         {/* Footer */}
         <footer className="bg-gray-800 text-white text-center p-4 mt-auto">
