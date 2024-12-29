@@ -34,7 +34,7 @@ export default function MainPageLayout({ children }) {
               }`}
               onClick={() => handleLinkClick("/main-page")}
             >
-              Homepage
+              Trang chủ
             </Link>
             <Link
               href="/main-page/practice-page"
@@ -45,7 +45,7 @@ export default function MainPageLayout({ children }) {
               }`}
               onClick={() => handleLinkClick("/main-page/practice-page")}
             >
-              Practice
+              Luyện tập
             </Link>
             <Link
               href="/main-page/nutrition-page"
@@ -56,7 +56,7 @@ export default function MainPageLayout({ children }) {
               }`}
               onClick={() => handleLinkClick("/main-page/nutrition-page")}
             >
-              Nutrition
+              Dinh dưỡng
             </Link>
             <Link
               href="/main-page/plan-page"
@@ -67,7 +67,7 @@ export default function MainPageLayout({ children }) {
               }`}
               onClick={() => handleLinkClick("/main-page/plan-page")}
             >
-              Plan
+              Kế hoạch
             </Link>
 
             {/* Logout Button */}
@@ -79,7 +79,7 @@ export default function MainPageLayout({ children }) {
               }}
               className="hover:underline text-black"
             >
-              Logout
+              Đăng xuất
             </button>
           </nav>
         </header>
@@ -88,7 +88,7 @@ export default function MainPageLayout({ children }) {
         <main className="flex-grow p-6">{children}</main>
 
         {/* Footer */}
-        <footer className="bg-gray-800 text-white text-center p-4">
+        <footer className="bg-gray-800 text-white text-center p-4 mt-auto">
           My Application. All rights reserved.
         </footer>
       </body>
