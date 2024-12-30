@@ -1,145 +1,118 @@
-export default function HomePage() {
+"use client";
+
+import React, { useState } from "react";
+
+export default function MainPage() {
+  const [selected, setSelected] = useState("Lịch");
+
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Welcome to the Homepage</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu
-        risus ut sapien egestas tincidunt vel non augue. Nullam sit amet sem ut
-        turpis vestibulum auctor non eget justo. Donec bibendum pharetra arcu,
-        non vestibulum libero cursus id. Morbi fermentum, ligula ut iaculis
-        aliquet, purus augue vehicula massa, vitae sagittis nulla nisi non
-        metus. Fusce quis nunc vel neque sagittis laoreet.
-      </p>
-      <p>
-        Integer in facilisis nisl. Sed at libero ut sapien luctus feugiat. Cras
-        eu lacus vitae nunc auctor rhoncus non eget lacus. Nam gravida sem
-        justo, nec sollicitudin risus interdum sed. Nullam id odio in orci
-        interdum faucibus at at sem. Mauris vehicula nunc at quam tempus, ut
-        vestibulum risus vehicula. Integer vitae orci sed ligula sagittis
-        vehicula eget sed ex. Sed nec ligula ac libero accumsan blandit.
-      </p>
-      <p>
-        Quisque non justo convallis, pulvinar nunc ac, scelerisque erat. Vivamus
-        non augue vel augue suscipit volutpat eget quis lorem. Sed viverra quam
-        eget augue sodales, vitae consequat urna convallis. Suspendisse in sem
-        vitae lacus aliquet mollis. Donec congue, arcu non sollicitudin
-        malesuada, erat velit hendrerit velit, quis aliquam eros lorem at quam.
-        Duis rutrum, dolor nec vehicula faucibus, elit velit accumsan neque, in
-        fermentum est lacus eget tortor. Cras tincidunt turpis sed lectus
-        malesuada efficitur.
-      </p>
-      <p>
-        Suspendisse potenti. Aliquam vitae mauris nisi. Fusce ultricies ligula
-        lorem, eget pretium ligula interdum eget. Proin vestibulum dui vitae
-        quam porttitor rhoncus. Suspendisse euismod ultricies tristique.
-        Praesent venenatis elit magna, sed dignissim erat posuere id. Praesent
-        consequat ligula neque, a malesuada risus tempus ac. Etiam fringilla
-        lacinia nunc eget elementum. Proin dictum, mi ut volutpat porttitor,
-        nibh eros vehicula lorem, a facilisis velit elit et orci. Mauris sed
-        efficitur enim.
-      </p>
-      <p>
-        Fusce malesuada urna vitae augue congue, in malesuada augue consequat.
-        Aliquam ac mauris vel magna convallis interdum. Suspendisse vel velit et
-        eros varius tincidunt. Duis ultricies ipsum vitae turpis fringilla, in
-        dapibus nisl fermentum. Nullam dapibus nisi nec sapien rhoncus, id
-        convallis ipsum gravida. Cras feugiat turpis vel orci lacinia
-        vestibulum. Suspendisse potenti. Nam in enim id arcu feugiat convallis
-        et at libero. Nulla sit amet ligula a felis interdum aliquet non eget
-        justo.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu
-        risus ut sapien egestas tincidunt vel non augue. Nullam sit amet sem ut
-        turpis vestibulum auctor non eget justo. Donec bibendum pharetra arcu,
-        non vestibulum libero cursus id. Morbi fermentum, ligula ut iaculis
-        aliquet, purus augue vehicula massa, vitae sagittis nulla nisi non
-        metus. Fusce quis nunc vel neque sagittis laoreet.
-      </p>
-      <p>
-        Integer in facilisis nisl. Sed at libero ut sapien luctus feugiat. Cras
-        eu lacus vitae nunc auctor rhoncus non eget lacus. Nam gravida sem
-        justo, nec sollicitudin risus interdum sed. Nullam id odio in orci
-        interdum faucibus at at sem. Mauris vehicula nunc at quam tempus, ut
-        vestibulum risus vehicula. Integer vitae orci sed ligula sagittis
-        vehicula eget sed ex. Sed nec ligula ac libero accumsan blandit.
-      </p>
-      <p>
-        Quisque non justo convallis, pulvinar nunc ac, scelerisque erat. Vivamus
-        non augue vel augue suscipit volutpat eget quis lorem. Sed viverra quam
-        eget augue sodales, vitae consequat urna convallis. Suspendisse in sem
-        vitae lacus aliquet mollis. Donec congue, arcu non sollicitudin
-        malesuada, erat velit hendrerit velit, quis aliquam eros lorem at quam.
-        Duis rutrum, dolor nec vehicula faucibus, elit velit accumsan neque, in
-        fermentum est lacus eget tortor. Cras tincidunt turpis sed lectus
-        malesuada efficitur.
-      </p>
-      <p>
-        Suspendisse potenti. Aliquam vitae mauris nisi. Fusce ultricies ligula
-        lorem, eget pretium ligula interdum eget. Proin vestibulum dui vitae
-        quam porttitor rhoncus. Suspendisse euismod ultricies tristique.
-        Praesent venenatis elit magna, sed dignissim erat posuere id. Praesent
-        consequat ligula neque, a malesuada risus tempus ac. Etiam fringilla
-        lacinia nunc eget elementum. Proin dictum, mi ut volutpat porttitor,
-        nibh eros vehicula lorem, a facilisis velit elit et orci. Mauris sed
-        efficitur enim.
-      </p>
-      <p>
-        Fusce malesuada urna vitae augue congue, in malesuada augue consequat.
-        Aliquam ac mauris vel magna convallis interdum. Suspendisse vel velit et
-        eros varius tincidunt. Duis ultricies ipsum vitae turpis fringilla, in
-        dapibus nisl fermentum. Nullam dapibus nisi nec sapien rhoncus, id
-        convallis ipsum gravida. Cras feugiat turpis vel orci lacinia
-        vestibulum. Suspendisse potenti. Nam in enim id arcu feugiat convallis
-        et at libero. Nulla sit amet ligula a felis interdum aliquet non eget
-        justo.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu
-        risus ut sapien egestas tincidunt vel non augue. Nullam sit amet sem ut
-        turpis vestibulum auctor non eget justo. Donec bibendum pharetra arcu,
-        non vestibulum libero cursus id. Morbi fermentum, ligula ut iaculis
-        aliquet, purus augue vehicula massa, vitae sagittis nulla nisi non
-        metus. Fusce quis nunc vel neque sagittis laoreet.
-      </p>
-      <p>
-        Integer in facilisis nisl. Sed at libero ut sapien luctus feugiat. Cras
-        eu lacus vitae nunc auctor rhoncus non eget lacus. Nam gravida sem
-        justo, nec sollicitudin risus interdum sed. Nullam id odio in orci
-        interdum faucibus at at sem. Mauris vehicula nunc at quam tempus, ut
-        vestibulum risus vehicula. Integer vitae orci sed ligula sagittis
-        vehicula eget sed ex. Sed nec ligula ac libero accumsan blandit.
-      </p>
-      <p>
-        Quisque non justo convallis, pulvinar nunc ac, scelerisque erat. Vivamus
-        non augue vel augue suscipit volutpat eget quis lorem. Sed viverra quam
-        eget augue sodales, vitae consequat urna convallis. Suspendisse in sem
-        vitae lacus aliquet mollis. Donec congue, arcu non sollicitudin
-        malesuada, erat velit hendrerit velit, quis aliquam eros lorem at quam.
-        Duis rutrum, dolor nec vehicula faucibus, elit velit accumsan neque, in
-        fermentum est lacus eget tortor. Cras tincidunt turpis sed lectus
-        malesuada efficitur.
-      </p>
-      <p>
-        Suspendisse potenti. Aliquam vitae mauris nisi. Fusce ultricies ligula
-        lorem, eget pretium ligula interdum eget. Proin vestibulum dui vitae
-        quam porttitor rhoncus. Suspendisse euismod ultricies tristique.
-        Praesent venenatis elit magna, sed dignissim erat posuere id. Praesent
-        consequat ligula neque, a malesuada risus tempus ac. Etiam fringilla
-        lacinia nunc eget elementum. Proin dictum, mi ut volutpat porttitor,
-        nibh eros vehicula lorem, a facilisis velit elit et orci. Mauris sed
-        efficitur enim.
-      </p>
-      <p>
-        Fusce malesuada urna vitae augue congue, in malesuada augue consequat.
-        Aliquam ac mauris vel magna convallis interdum. Suspendisse vel velit et
-        eros varius tincidunt. Duis ultricies ipsum vitae turpis fringilla, in
-        dapibus nisl fermentum. Nullam dapibus nisi nec sapien rhoncus, id
-        convallis ipsum gravida. Cras feugiat turpis vel orci lacinia
-        vestibulum. Suspendisse potenti. Nam in enim id arcu feugiat convallis
-        et at libero. Nulla sit amet ligula a felis interdum aliquet non eget
-        justo.
-      </p>
+    <div className="min-h-screen bg-gray-100 p-4 px-20">
+      {/* Header */}
+      <header className="flex justify-between items-center bg-white shadow-md p-4 rounded-md w-64">
+        <h1 className="text-lg font-bold text-black">Tháng 11/2024</h1>
+        <button className="text-teal-500 text-lg">📅</button>
+      </header>
+
+      {/* Tabs */}
+      <nav className="flex justify-between space-x-8 mt-6 text-lg px-40">
+        <button
+          onClick={() => setSelected("Lịch")}
+          className={`text-black hover:text-teal-600 focus:text-teal-600 focus:font-bold active:text-teal-600 active:font-bold ${
+            selected === "Lịch" ? "text-teal-600 font-bold" : ""
+          }`}
+        >
+          Lịch
+        </button>
+        <button
+          onClick={() => setSelected("Thời lượng")}
+          className={`text-black hover:text-teal-600 focus:text-teal-600 focus:font-bold active:text-teal-600 active:font-bold ${
+            selected === "Thời lượng" ? "text-teal-600 font-bold" : ""
+          }`}
+        >
+          Thời lượng
+        </button>
+        <button
+          onClick={() => setSelected("Calo")}
+          className={`text-black hover:text-teal-600 focus:text-teal-600 focus:font-bold active:text-teal-600 active:font-bold ${
+            selected === "Calo" ? "text-teal-600 font-bold" : ""
+          }`}
+        >
+          Calo
+        </button>
+      </nav>
+
+      {/* Main Content */}
+      <main className="mt-6">
+        {/* Placeholder for Chart */}
+        <div className="bg-gray-300 h-40 rounded-md"></div>
+
+        {/* Weekly History */}
+        <section className="mt-6">
+          <h2 className="text-lg font-bold text-teal-500 mb-4">
+            Lịch sử hàng tuần
+          </h2>
+          <div className="bg-white shadow-md rounded-md p-8">
+            {/* History Items */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between bg-gray-100 p-3 rounded-md">
+                <div className="w-full space-y-3">
+                  {/* Nhóm đầu tiên */}
+                  <div>
+                    <h3 className="font-medium text-black">
+                      17 Th11 - 23 Th11
+                    </h3>
+                    <p className="text-gray-500 text-sm">
+                      5 lần tập · 2 công thức yêu thích
+                    </p>
+                  </div>
+
+                  {/* Nhóm thứ hai với hình ảnh */}
+                  <div className="flex items-center justify-between space-x-2 px-12">
+                    <img
+                      src="/fire.png"
+                      alt="Description of image"
+                      className="w-8 h-8"
+                    />
+                    <div className="w-4"></div>
+                    <div className="flex-grow">
+                      <h4 className="font-medium text-black">
+                        Luyện tập ngày 23/11
+                      </h4>
+                      <p className="text-gray-500 text-sm">
+                        10 động tác - 10 phút - 500 calo
+                      </p>
+                    </div>
+                    <button className="text-teal-500 ml-auto">➔</button>
+                  </div>
+
+                  {/* Nhóm thứ hai với hình ảnh */}
+                  <div className="flex items-center justify-between space-x-2 px-12">
+                    <img
+                      src="/heart.png"
+                      alt="Description of image"
+                      className="w-8 h-8"
+                    />
+                    <div className="w-4"></div>
+                    <div className="flex-grow">
+                      <h4 className="font-medium text-black">
+                        Bữa sáng kiểu anh
+                      </h4>
+                      <p className="text-gray-500 text-sm">Nguyễn Văn A</p>
+                    </div>
+                    <button className="text-teal-500 ml-auto">➔</button>
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center justify-between bg-gray-100 p-3 rounded-md">
+                <div>
+                  <h4 className="font-medium text-black">25 Th11 - 30 Th11</h4>
+                  <p className="text-gray-500 text-sm">...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   );
 }
