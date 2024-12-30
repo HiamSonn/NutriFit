@@ -85,7 +85,7 @@ export default function MainPageLayout({ children }) {
         </header>
 
         {/* Main content */}
-        <main className="flex-grow p-6 pt-[80px]">{children}</main>
+        <main className="flex-grow pt-[57px]">{children}</main>
 
         {/* Footer */}
         <footer className="bg-gray-800 text-white text-center p-4 mt-auto">
