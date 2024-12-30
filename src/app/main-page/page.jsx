@@ -6,7 +6,7 @@ export default function MainPage() {
   const [selected, setSelected] = useState("Lịch");
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4 px-20">
+    <div className="min-h-screen bg-white p-4 px-20">
       {/* Header */}
       <header className="flex justify-between items-center bg-white shadow-md p-4 rounded-md w-64">
         <h1 className="text-lg font-bold text-black">Tháng 11/2024</h1>
@@ -48,7 +48,7 @@ export default function MainPage() {
 
         {/* Weekly History */}
         <section className="mt-6">
-          <h2 className="text-lg font-bold text-teal-500 mb-4">
+          <h2 className="text-lg font-bold text-teal-600 mb-4">
             Lịch sử hàng tuần
           </h2>
           <div className="bg-white shadow-md rounded-md p-8">
@@ -57,7 +57,7 @@ export default function MainPage() {
               <div className="flex items-center justify-between bg-gray-100 p-3 rounded-md">
                 <div className="w-full space-y-3">
                   {/* Nhóm đầu tiên */}
-                  <div>
+                  <div className="px-4">
                     <h3 className="font-medium text-black">
                       17 Th11 - 23 Th11
                     </h3>
@@ -82,7 +82,9 @@ export default function MainPage() {
                         10 động tác - 10 phút - 500 calo
                       </p>
                     </div>
-                    <button className="text-teal-500 ml-auto">➔</button>
+                    <button className="text-teal-500 ml-auto font-bold">
+                      ➔
+                    </button>
                   </div>
 
                   {/* Nhóm thứ hai với hình ảnh */}
@@ -99,12 +101,14 @@ export default function MainPage() {
                       </h4>
                       <p className="text-gray-500 text-sm">Nguyễn Văn A</p>
                     </div>
-                    <button className="text-teal-500 ml-auto">➔</button>
+                    <button className="text-teal-500 ml-auto font-bold">
+                      ➔
+                    </button>
                   </div>
                 </div>
               </div>
               <div className="flex items-center justify-between bg-gray-100 p-3 rounded-md">
-                <div>
+                <div className="px-4">
                   <h4 className="font-medium text-black">25 Th11 - 30 Th11</h4>
                   <p className="text-gray-500 text-sm">...</p>
                 </div>
