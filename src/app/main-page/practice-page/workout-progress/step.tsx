@@ -1,7 +1,15 @@
 "use client";
 
-import React from "react";
-import { ChevronLeft, ChevronRight, Heart, MessageSquare } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Heart,
+  MessageSquare,
+  Pause,
+  Play,
+  Check,
+} from "lucide-react";
 
 interface WorkoutStep {
   id: number;
@@ -27,6 +35,9 @@ const WorkoutScreen: React.FC<WorkoutScreenProps> = ({
   onNext,
   onPrevious,
 }) => {
+  const [timeLeft, setTimeLeft] = useState(step.time || 0);
+  const [isTimerRunning, setIsTimerRunning] = useState(true);
+
   const formatTime = (seconds: number) => {
     if (seconds <= 0) return "Không xác định";
     const minutes = Math.floor(seconds / 60);
@@ -34,6 +45,36 @@ const WorkoutScreen: React.FC<WorkoutScreenProps> = ({
     return `${minutes}:${
       remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds
     }`;
+  };
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout | null = null; // Khai báo biến timer ngoài useEffect
+
+    if (timeLeft > 0 && isTimerRunning) {
+      // Nếu thời gian còn lại và bộ đếm đang chạy, bắt đầu bộ đếm
+      timer = setInterval(() => {
+        setTimeLeft((prev) => prev - 1);
+      }, 1000);
+    } else if (timeLeft === 0 && step.time && step.time > 0) {
+      // Nếu bộ đếm về 0 và có thời gian, gọi onNext
+      onNext();
+    }
+
+    return () => {
+      if (timer) {
+        clearInterval(timer); // Dọn dẹp bộ đếm khi component bị unmount hoặc bộ đếm dừng
+      }
+    };
+  }, [timeLeft, isTimerRunning, onNext, step.time]);
+
+  useEffect(() => {
+    // Reset the timer whenever the step changes
+    setTimeLeft(step.time || 0);
+    setIsTimerRunning(true); // Reset timer to running state when changing steps
+  }, [step]);
+
+  const handleTimerToggle = () => {
+    setIsTimerRunning((prev) => !prev); // Toggle timer state
   };
 
   return (
@@ -48,11 +89,13 @@ const WorkoutScreen: React.FC<WorkoutScreenProps> = ({
 
       <div className="flex justify-between text-center space-x-20">
         <div className="text-6xl font-bold text-black">
-          {step.reps && step.reps > 0
-            ? `x${step.reps}`
-            : step.time && step.time > 0
-            ? formatTime(step.time)
-            : "Không xác định"}
+          {
+            step.time && step.time > 0
+              ? formatTime(timeLeft) // Hiển thị thời gian còn lại nếu có bộ đếm
+              : step.reps && step.reps > 0
+              ? `x${step.reps}` // Hiển thị số lần thực hiện nếu có reps
+              : "Không xác định" // Hiển thị fallback nếu không có reps hoặc thời gian
+          }
         </div>
         <div className="flex justify-center space-x-5">
           <div className="text-center">
@@ -88,23 +131,25 @@ const WorkoutScreen: React.FC<WorkoutScreenProps> = ({
         </button>
 
         <button
-          className="px-36 py-6 bg-teal-500 text-white text-2xl rounded-full hover:bg-teal-600 transition-colors"
-          onClick={onNext}
+          className="px-36 py-4 bg-teal-500 text-white rounded-full hover:bg-teal-600 transition-colors flex items-center justify-center"
+          onClick={step.time && step.time > 0 ? handleTimerToggle : onNext}
         >
-          Hoàn thành
+          {step.time && step.time > 0 ? (
+            isTimerRunning ? (
+              <Pause size={48} />
+            ) : (
+              <Play size={48} />
+            )
+          ) : (
+            <Check size={48} />
+          )}
         </button>
 
         <button
           onClick={onNext}
           className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-          disabled={currentStep === totalSteps - 1}
         >
-          <ChevronRight
-            size={80}
-            className={
-              currentStep === totalSteps - 1 ? "text-gray-300" : "text-gray-600"
-            }
-          />
+          <ChevronRight size={80} className="text-gray-600" />
         </button>
       </div>
 

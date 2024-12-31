@@ -30,6 +30,14 @@ const workoutSteps: WorkoutStep[] = [
     time: 20,
     imageUrl: "/exercise.png",
   },
+  {
+    id: 3,
+    title: "Bước cao",
+    subtitle: "Mỗi bên x9",
+    reps: 18,
+    time: -1,
+    imageUrl: "/exercise.png",
+  },
 ];
 
 export default function WorkoutList() {

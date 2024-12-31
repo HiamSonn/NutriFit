@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronRight } from "lucide-react";
 
 interface ReadyScreenProps {
@@ -14,6 +14,20 @@ const ReadyScreen: React.FC<ReadyScreenProps> = ({
   stepCount,
   onReady,
 }) => {
+  const [countdown, setCountdown] = useState(10);
+
+  useEffect(() => {
+    if (countdown > 0) {
+      const timer = setInterval(() => {
+        setCountdown((prev) => prev - 1);
+      }, 1000);
+
+      return () => clearInterval(timer); // Dọn dẹp bộ đếm khi component unmount
+    } else {
+      onReady(); // Gọi hàm onReady khi đếm ngược kết thúc
+    }
+  }, [countdown, onReady]);
+
   return (
     <div className="w-full flex-1 p-6 flex flex-col items-center space-y-8 relative">
       <h2 className="text-3xl font-semibold text-teal-500">
@@ -22,7 +36,8 @@ const ReadyScreen: React.FC<ReadyScreenProps> = ({
 
       <div className="relative">
         <div className="w-24 h-24 rounded-full border-2 border-teal-500 flex items-center justify-center">
-          <span className="text-black text-4xl">{stepCount}</span>
+          <span className="text-black text-4xl">{countdown}</span>{" "}
+          {/* Hiển thị bộ đếm ngược */}
         </div>
       </div>
 
