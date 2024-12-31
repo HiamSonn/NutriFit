@@ -76,7 +76,14 @@ export default function PracticePage() {
                 </p>
               </div>
               <p className="text-teal-600">Tập ngay</p>
-              <button className="text-teal-500 font-bold px-8">➔</button>
+              <button
+                onClick={() => {
+                  router.push("/main-page/practice-page/workout-progress");
+                }}
+                className="text-teal-500 font-bold px-8"
+              >
+                ➔
+              </button>
             </div>
             <div className="flex items-center justify-between bg-gray-100 p-3 rounded-md">
               <div className="flex items-center space-x-4 px-8 flex-grow">
