@@ -78,7 +78,7 @@ export default function PracticePage() {
               <p className="text-teal-600">Tập ngay</p>
               <button
                 onClick={() => {
-                  router.push("/main-page/practice-page/workout-progress");
+                  router.push("/main-page/practice-page/workout-info");
                 }}
                 className="text-teal-500 font-bold px-8"
               >
