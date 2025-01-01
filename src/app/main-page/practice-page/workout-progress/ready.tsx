@@ -7,12 +7,14 @@ interface ReadyScreenProps {
   stepTitle: string;
   stepCount: number;
   onReady: () => void;
+  onOpenDiscription: () => void;
 }
 
 const ReadyScreen: React.FC<ReadyScreenProps> = ({
   stepTitle,
   stepCount,
   onReady,
+  onOpenDiscription,
 }) => {
   const [countdown, setCountdown] = useState(10);
 
@@ -45,7 +47,10 @@ const ReadyScreen: React.FC<ReadyScreenProps> = ({
         <div className="text-center">
           <h3 className="text-black text-3xl">{stepTitle}</h3>
         </div>
-        <button className="w-8 h-8 rounded-full border border-black flex items-center justify-center text-gray-500 text-lg hover:bg-gray-50 transition-colors">
+        <button
+          onClick={onOpenDiscription}
+          className="w-8 h-8 rounded-full border border-black flex items-center justify-center text-gray-500 text-lg hover:bg-gray-50 transition-colors"
+        >
           ?
         </button>
       </div>

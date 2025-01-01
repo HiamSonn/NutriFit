@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function MainPage() {
+  const router = useRouter();
   const [selected, setSelected] = useState("Lịch");
 
   return (
@@ -82,7 +84,12 @@ export default function MainPage() {
                         10 động tác - 10 phút - 500 calo
                       </p>
                     </div>
-                    <button className="text-teal-500 ml-auto font-bold">
+                    <button
+                      onClick={() => {
+                        router.push("/main-page/practice-page/workout-info");
+                      }}
+                      className="text-teal-500 ml-auto font-bold"
+                    >
                       ➔
                     </button>
                   </div>

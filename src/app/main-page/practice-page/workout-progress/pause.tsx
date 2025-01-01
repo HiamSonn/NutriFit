@@ -18,6 +18,7 @@ interface PauseScreenProps {
   restTime?: number; // Thời gian nghỉ tính bằng giây
   onContinue: () => void;
   onSkip: () => void;
+  onOpenDiscription: () => void;
 }
 
 const PauseScreen: React.FC<PauseScreenProps> = ({
@@ -27,6 +28,7 @@ const PauseScreen: React.FC<PauseScreenProps> = ({
   restTime = 20, // Mặc định 20 giây
   onContinue,
   onSkip,
+  onOpenDiscription,
 }) => {
   const [timeLeft, setTimeLeft] = useState(restTime);
 
@@ -60,8 +62,11 @@ const PauseScreen: React.FC<PauseScreenProps> = ({
             TIẾP THEO {currentStep + 2}/{totalSteps + 1}
           </p>
           <div className="flex items-center gap-2">
-            <h1 className="text-4xl font-bold text-black">Bước cao</h1>
-            <button className="w-6 h-6 rounded-full border-2 border-white flex items-center justify-center text-sm">
+            <h1 className="text-4xl font-bold text-black">{step.title}</h1>
+            <button
+              onClick={onOpenDiscription}
+              className="w-6 h-6 rounded-full border-2 border-white flex items-center justify-center text-sm"
+            >
               ?
             </button>
           </div>

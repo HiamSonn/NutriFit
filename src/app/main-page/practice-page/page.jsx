@@ -85,7 +85,12 @@ export default function PracticePage() {
                 ➔
               </button>
             </div>
-            <div className="flex items-center justify-between bg-gray-100 p-3 rounded-md">
+            <div
+              onClick={() => {
+                router.push("/main-page/practice-page/rest-day");
+              }}
+              className="flex items-center justify-between bg-gray-100 p-3 rounded-md"
+            >
               <div className="flex items-center space-x-4 px-8 flex-grow">
                 <p className="font-bold text-black w-1/3">Thứ 5</p>
                 <p className="text-gray-500">Nghỉ ngơi</p>

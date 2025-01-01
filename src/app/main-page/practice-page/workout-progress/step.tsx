@@ -5,7 +5,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Heart,
-  MessageSquare,
+  ThumbsDown,
   Pause,
   Play,
   Check,
@@ -26,6 +26,7 @@ interface WorkoutScreenProps {
   totalSteps: number;
   onNext: () => void;
   onPrevious: () => void;
+  onOpenDiscription: () => void;
 }
 
 const WorkoutScreen: React.FC<WorkoutScreenProps> = ({
@@ -34,9 +35,13 @@ const WorkoutScreen: React.FC<WorkoutScreenProps> = ({
   totalSteps,
   onNext,
   onPrevious,
+  onOpenDiscription,
 }) => {
   const [timeLeft, setTimeLeft] = useState(step.time || 0);
   const [isTimerRunning, setIsTimerRunning] = useState(true);
+  // Trạng thái để kiểm soát like và dislike
+  const [liked, setLiked] = useState(false);
+  const [disliked, setDisliked] = useState(false);
 
   const formatTime = (seconds: number) => {
     if (seconds <= 0) return "Không xác định";
@@ -77,6 +82,16 @@ const WorkoutScreen: React.FC<WorkoutScreenProps> = ({
     setIsTimerRunning((prev) => !prev); // Toggle timer state
   };
 
+  const handleLikeClick = () => {
+    setLiked(!liked);
+    if (disliked) setDisliked(false); // Nếu dislike đang được chọn, bỏ chọn
+  };
+
+  const handleDislikeClick = () => {
+    setDisliked(!disliked);
+    if (liked) setLiked(false); // Nếu like đang được chọn, bỏ chọn
+  };
+
   return (
     <div className="w-full h-full flex flex-col justify-between">
       <div className="relative w-full mt-12 mb-12">
@@ -104,16 +119,31 @@ const WorkoutScreen: React.FC<WorkoutScreenProps> = ({
               <p className="text-2xl text-gray-500">{step.subtitle}</p>
             )}
           </div>
-          <button className="w-8 h-8 rounded-full border border-black flex items-center justify-center text-gray-500 text-lg hover:bg-gray-50 transition-colors">
+          <button
+            onClick={onOpenDiscription}
+            className="w-8 h-8 rounded-full border border-black flex items-center justify-center text-gray-500 text-lg hover:bg-gray-50 transition-colors"
+          >
             ?
           </button>
         </div>
         <div className="text-center space-x-10">
-          <button className="hover:scale-110 transition-transform">
-            <Heart size={40} className="text-red-500" />
+          <button
+            onClick={handleLikeClick}
+            className="hover:scale-110 transition-transform"
+          >
+            <Heart
+              size={40}
+              className={liked ? "text-red-500" : "text-gray-300"}
+            />
           </button>
-          <button className="hover:scale-110 transition-transform">
-            <MessageSquare size={40} className="text-gray-500" />
+          <button
+            onClick={handleDislikeClick}
+            className="hover:scale-110 transition-transform"
+          >
+            <ThumbsDown
+              size={40}
+              className={disliked ? "text-black" : "text-gray-300"}
+            />
           </button>
         </div>
       </div>
