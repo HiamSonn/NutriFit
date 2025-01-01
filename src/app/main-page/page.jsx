@@ -1,19 +1,114 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { Calendar } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { ChartSection } from "./chart";
 
 export default function MainPage() {
   const router = useRouter();
   const [selected, setSelected] = useState("Lịch");
+  const [date, setDate] = useState(new Date());
+  const [isOpen, setIsOpen] = useState(false);
+  const pickerRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (pickerRef.current && !pickerRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const formatMonthYear = (date) => {
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+    return `${month}/${year}`;
+  };
+
+  const months = [
+    "Tháng 1",
+    "Tháng 2",
+    "Tháng 3",
+    "Tháng 4",
+    "Tháng 5",
+    "Tháng 6",
+    "Tháng 7",
+    "Tháng 8",
+    "Tháng 9",
+    "Tháng 10",
+    "Tháng 11",
+    "Tháng 12",
+  ];
+
+  const handleYearChange = (increment) => {
+    const newDate = new Date(date);
+    newDate.setFullYear(date.getFullYear() + increment);
+    setDate(newDate);
+  };
+
+  const handleMonthSelect = (monthIndex) => {
+    const newDate = new Date(date);
+    newDate.setMonth(monthIndex);
+    setDate(newDate);
+    setIsOpen(false);
+  };
 
   return (
     <div className="min-h-screen bg-white p-4 px-20">
       {/* Header */}
-      <header className="flex justify-between items-center bg-white shadow-md p-4 rounded-md w-64">
-        <h1 className="text-lg font-bold text-black">Tháng 11/2024</h1>
-        <button className="text-teal-500 text-lg">📅</button>
-      </header>
+
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex-grow px-4 py-2 border border-black rounded-lg flex items-center justify-center gap-6 hover:bg-gray-50"
+      >
+        <span className="text-black">{formatMonthYear(date)}</span>
+        <Calendar className="h-4 w-4 text-black" />
+      </button>
+
+      {isOpen && (
+        <div
+          ref={pickerRef}
+          className="absolute top-12 left-0 bg-white text-black border border-black rounded-lg shadow-lg p-4 z-50 min-w-[280px]"
+        >
+          <div className="flex justify-between items-center mb-4">
+            <button
+              onClick={() => handleYearChange(-1)}
+              className="p-2 hover:bg-gray-100 rounded-lg"
+            >
+              &#8592;
+            </button>
+            <span className="font-medium">{date.getFullYear()}</span>
+            <button
+              onClick={() => handleYearChange(1)}
+              className="p-2 hover:bg-gray-100 rounded-lg"
+            >
+              &#8594;
+            </button>
+          </div>
+
+          <div className="grid grid-cols-3 gap-2">
+            {months.map((month, index) => (
+              <div
+                key={month}
+                className={`text-center p-2 cursor-pointer rounded-md hover:bg-gray-100 ${
+                  index === date.getMonth()
+                    ? "bg-black text-white hover:bg-gray-800"
+                    : "text-black"
+                }`}
+                onClick={() => handleMonthSelect(index)}
+              >
+                {month}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Tabs */}
       <nav className="flex justify-between space-x-8 mt-6 text-lg px-40">
@@ -46,7 +141,7 @@ export default function MainPage() {
       {/* Main Content */}
       <main className="mt-6">
         {/* Placeholder for Chart */}
-        <div className="bg-gray-300 h-40 rounded-md"></div>
+        <ChartSection selected={selected} date={date} />
 
         {/* Weekly History */}
         <section className="mt-6">
