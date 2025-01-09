@@ -54,60 +54,60 @@ export default function PlanPage() {
   return (
     <div className="grid grid-cols-[0.5fr_11fr_0.5fr] mt-10">
       <div></div>
-      <div className="space-y-10">
-        <h1 className="text-darkgreen font-bold text-2xl">Kế hoạch</h1>
-        <div className="grid grid-cols-2 gap-10">
-          <div className="col-span-1 space-y-10">
-            <h1 className="text-darkgreen font-bold text-2xl">
+      <div className="lg:space-y-10 md:space-y-8 sm:space-y-6 space-y-4">
+        <h1 className="text-darkgreen font-bold lg:text-2xl text-lg  ">Kế hoạch</h1>
+        <div className="grid lg:grid-cols-2  grid-cols-1 lg:gap-10 md:gap-6 gap-4">
+          <div className="col-span-1 lg:space-y-10 md:space-y-8 sm:space-y-6 space-y-4">
+            <h1 className="text-darkgreen font-bold lg:text-xl md:text-lg sm:text-base text-base">
               Thông tin cá nhân
             </h1>
-            <div className="border border-grayborder p-10 rounded-md space-y-4">
+            <div className="shadow-md lg:p-10 md:p-8 sm:p-6 p-3 rounded-md space-y-4">
               <div>
-                <h1>Tên</h1>
+                <h1 className="lg:text-xl md:text-lg sm:text-base text-sm">Tên</h1>
                 <input
                   type="text"
-                  className="border rounded-md p-2 border-grayborder w-full"
+                  className="border rounded-md p-2 border-grayborder w-full lg:text-xl md:text-lg sm:text-base text-xs"
                 />
               </div>
               <div className="grid grid-cols-3 gap-4">
                 <div className="col-span-1">
-                  <h1>Chiều cao</h1>
+                  <h1 className="lg:text-xl md:text-lg sm:text-base text-sm">Chiều cao</h1>
                   <input
                     type="text"
-                    className="border rounded-md p-2 border-grayborder w-full"
+                    className="border rounded-md p-2 border-grayborder w-full lg:text-xl md:text-lg sm:text-base text-xs"
                   />
                 </div>
                 <div className="col-span-1">
-                  <h1>Cân nặng</h1>
+                  <h1 className="lg:text-xl md:text-lg sm:text-base text-sm">Cân nặng</h1>
                   <input
                     type="text"
-                    className="border rounded-md p-2 border-grayborder w-full"
+                    className="border rounded-md p-2 border-grayborder w-full lg:text-xl md:text-lg sm:text-base text-xs"
                   />
                 </div>
                 <div className="col-span-1">
-                  <h1>Tuổi</h1>
+                  <h1 className="lg:text-xl md:text-lg sm:text-base text-sm">Tuổi</h1>
                   <input
                     type="text"
-                    className="border rounded-md p-2 border-grayborder w-full"
+                    className="border rounded-md p-2 border-grayborder w-full lg:text-xl md:text-lg sm:text-base text-xs"
                   />
                 </div>
               </div>
               <div className=" flex justify-end">
-                <button className="bg-lightgreen text-white px-6 py-1 rounded-lg font-bold">
+                <button className="bg-lightgreen text-white px-6 py-1 rounded-lg font-bold lg:text-xl md:text-lg sm:text-base text-sm">
                   Cập nhật
                 </button>
               </div>
             </div>
           </div>
-          <div className="col-span- space-y-10">
-            <h1 className="text-darkgreen font-bold text-2xl">Mục tiêu</h1>
-            <div className="col-span-1 border border-grayborder p-10 rounded-md space-y-10">
+          <div className="col-span-1 lg:space-y-10 md:space-y-8 sm:space-y-6 space-y-4">
+            <h1 className="text-darkgreen font-bold lg:text-xl md:text-lg sm:text-base text-sm">Mục tiêu</h1>
+            <div className="col-span-1 shadow-md lg:p-10 md:p-8 sm:p-6 p-3  rounded-md lg:space-y-10 md:space-y-8 sm:space-y-6 space-y-4">
               <div className="space-y-5 mt-1">
-                <div className="flex justify-between">
+                <div className="flex justify-between lg:text-xl md:text-lg sm:text-base text-sm">
                   <span>Thời gian: 3 tháng</span>
                   <span>Thời gian còn lại: 1 tháng</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between lg:text-xl md:text-lg sm:text-base text-sm">
                   <span>Đạt 70kg</span>
                   <span>Hiện tại: 84kg</span>
                 </div>
@@ -119,19 +119,19 @@ export default function PlanPage() {
                 ></div>
               </div>
               <div className=" flex justify-end">
-                <button className="bg-lightgreen text-white px-6 py-1 rounded-lg font-bold  " onClick={()=>router.push("/main-page/plan-page/target")}>
+                <button className="bg-lightgreen text-white px-6 py-1 rounded-lg font-bold lg:text-xl md:text-lg sm:text-base text-sm " onClick={()=>router.push("/main-page/plan-page/target")}>
                   Điều chỉnh
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-10">
-          <div className="col-span-1 space-y-10">
-            <h1 className="text-darkgreen font-bold text-2xl">
+        <div className="lg:grid grid-cols-2 lg:gap-10 md:gap-6 gap-4">
+          <div className="col-span-1 lg:space-y-10 md:space-y-8 sm:space-y-6 space-y-4 lg:text-xl md:text-lg sm:text-base text-sm">
+            <h1 className="text-darkgreen font-bold lg:text-xl md:text-lg sm:text-base text-base">
               Chế độ tập luyện
             </h1>
-            <div className="border border-grayborder p-10 rounded-md space-y-4">
+            <div className="shadow-md lg:p-10 md:p-8 sm:p-6 p-3 rounded-md space-y-4">
               <div className="flex justify-between">
                 <span>Cường độ luyện tập</span>
                 <select className="border rounded-md p-2 border-grayborder">
@@ -157,6 +157,14 @@ export default function PlanPage() {
                   <EditIcon
                     className="text-black cursor-pointer"
                     onClick={() => setIsEditingTime(!isEditingTime)}
+                    sx={{
+                      fontSize: {
+                        xs: "14px",
+                        sm: "16px",
+                        md: "20px",
+                        lg: "24px",
+                      },
+                    }}
                   />
                 </div>
               </div>
@@ -248,11 +256,11 @@ export default function PlanPage() {
               </div>
             </div>
           </div>
-          <div className="col-span-1 space-y-10">
-            <h1 className="text-darkgreen font-bold text-2xl">
+          <div className="col-span-1 lg:space-y-10 md:space-y-8 sm:space-y-6 space-y-4">
+            <h1 className="text-darkgreen font-bold lg:text-xl md:text-lg sm:text-base text-base">
               Chế độ dinh dưỡng
             </h1>
-            <div className="border border-grayborder p-10 rounded-md space-y-4">
+            <div className="shadow-md lg:p-10 md:p-8 sm:p-6 p-3 rounded-md space-y-4 lg:text-xl md:text-lg sm:text-base text-sm">
               <div className="flex justify-between">
                 <span>Ngân sách mỗi bữa ăn</span>
                 <div className="flex items-center gap-2">
@@ -270,6 +278,14 @@ export default function PlanPage() {
                   <EditIcon
                     className="text-black cursor-pointer"
                     onClick={() => setIsEditingBudget(!isEditingBudget)}
+                    sx={{
+                      fontSize: {
+                        xs: "14px",
+                        sm: "16px",
+                        md: "20px",
+                        lg: "24px",
+                      },
+                    }}
                   />
                 </div>
               </div>
@@ -290,6 +306,14 @@ export default function PlanPage() {
                   <EditIcon
                     className="text-black cursor-pointer"
                     onClick={() => setIsEditingCookingTime(!isEditingCookingTime)}
+                    sx={{
+                      fontSize: {
+                        xs: "14px",
+                        sm: "16px",
+                        md: "20px",
+                        lg: "24px",
+                      },
+                    }}
                   />
                 </div>
               </div>

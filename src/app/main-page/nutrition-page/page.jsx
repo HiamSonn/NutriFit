@@ -53,22 +53,7 @@ export default function NutritionPage() {
             <Meal/>
          </div>
         </div>
-        <div className="grid grid-cols-2 gap-20 min-h-[100px] mt-10 "> 
-          <div className="col-span-1 ">
-          </div>
-          <div className="col-span-1  border border-grayborder px-4 py-2 rounded-md space-y-4">
-           
-            <div className="flex flex-col ">
-              <h1 className="text-darkgreen font-bold text-xl">Tìm hiểu thêm các thực đơn do chúng tôi chuẩn bị</h1>
-            </div>
-           <div className=" flex justify-end">
-              <button className="bg-lightgreen text-white px-6 py-1 rounded-lg font-bold">
-               Khám phá
-              </button>
-           </div>
-           
-          </div>
-        </div>
+       
         </div>
        
   </div>

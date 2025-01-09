@@ -13,32 +13,55 @@ const weekdiet = () => {
     <div className="bg-white max-w-full overflow-hidden mt-10">
       <div className=" grid grid-cols-[0.5fr_11fr_0.5fr]">
         <div></div>
-        <div className="space-y-20">
-          <h1 className="text-darkgreen font-bold text-2xl">
+        <div className="lg:space-y-20 md:space-y-12 sm:space-y-8 space-y-4">
+          <h1 className="text-darkgreen font-bold lg:text-2xl md:text-lg sm:text-base text-sm">
             Thực đơn tuần này
           </h1>
-          <div className="border border-grayborder mt-10  p-4 rounded-md">
-            <h1 className="text-darkgreen font-bold text-center text-2xl">
+          <div className="border border-grayborder lg:mt-10 md:mt-8 sm:mt-6 mt-4  lg:p-4 md:p-3 p-2 rounded-md">
+            <h1 className="text-darkgreen font-bold lg:text-2xl md:text-lg sm:text-base text-sm text-center">
               Nguyên liệu
             </h1>
-            <div className="max-w-[1400px] mt-5 ">
-              <Swiper
-                modules={[Pagination]}
-                spaceBetween={20}
-                slidesPerView={5}
-                pagination={{
-                  clickable: true,
-                  bulletActiveClass: "swiper-pagination-bullet-active",
-                }}
-                className="w-full rounded-lg"
-              >
-                {[...Array(10)].map((_, index) => (
-                  <SwiperSlide key={index}>
-                    <Ingredient />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+           
+            <div className="flex justify-center w-[90vw] sm:w-[85vw] md:w-[80vw] lg:w-[90vw] mt-5">
+                <Swiper
+                  modules={[Pagination]}
+                  spaceBetween={20}
+                  breakpoints={{
+                    320: {
+                      slidesPerView: 3,
+                      spaceBetween: 5
+                    },
+                    640: {
+                      slidesPerView: 4,
+                      spaceBetween: 15
+                    },
+                    768: {
+                      slidesPerView: 5,
+                      spaceBetween: 20
+                    },
+                    1024: {
+                      slidesPerView: 5,
+                      spaceBetween: 25
+                    },
+                    1280: {
+                      slidesPerView: 5,
+                      spaceBetween: 30
+                    }
+                  }}
+                  pagination={{
+                    clickable: true,
+                    bulletActiveClass: "swiper-pagination-bullet-active",
+                  }}
+                  className="w-full rounded-lg"
+                >
+                  {[...Array(10)].map((_, index) => (
+                    <SwiperSlide key={index}>
+                      <Ingredient />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+             </div>
+            
             <style jsx global>{`
               .swiper {
                 padding-bottom: 0px !important;
@@ -62,8 +85,8 @@ const weekdiet = () => {
               }
             `}</style>
           </div>
-          <div className="border border-grayborder mt-10  p-4 rounded-md">
-            <h1 className="text-darkgreen font-bold text-2xl text-center">Thực đơn</h1>
+          <div className="border border-grayborder lg:mt-10 md:mt-8 sm:mt-6 mt-4  p-4 rounded-md">
+            <h1 className="text-darkgreen font-bold lg:text-2xl md:text-lg sm:text-base text-sm text-center">Thực đơn</h1>
             {map.map((item,index)=>(
                 <DayMeal key={index} day={item}/>
             ))}

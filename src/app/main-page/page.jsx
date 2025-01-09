@@ -4,7 +4,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { Calendar } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { ChartSection } from "./chart";
-
 export default function MainPage() {
   const router = useRouter();
   const [selected, setSelected] = useState("Lịch");
@@ -203,7 +202,7 @@ export default function MainPage() {
                       </h4>
                       <p className="text-gray-500 text-sm">Nguyễn Văn A</p>
                     </div>
-                    <button className="text-teal-500 ml-auto font-bold">
+                    <button className="text-teal-500 ml-auto font-bold" onClick={() => router.push("/main-page/nutrition-page/meal")}>
                       ➔
                     </button>
                   </div>
