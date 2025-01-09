@@ -16,6 +16,7 @@ export default {
         grayborder:'#E0E0E0',
         lightgreen:'#4AB7B6',
         lightgray:'#F0F0F0',
+        progress:'#D9D9D9'
       },
     },
   },

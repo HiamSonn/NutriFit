@@ -37,75 +37,73 @@ const MealDetail = () => {
               </div>
             </div>
           </div>
-          
         </div>
         <h1 className="text-darkgreen font-bold text-2xl">Cách chế biến</h1>
-        
-            <div className=" w-[40%] space-y-5">
-              <div className="flex justify-between ">
-                <h1>1</h1>
-                <div className="space-y-4">
-                  <h1>
-                    Loại bỏ vỏ chuối, vỏ kiwi, vỏ xoài chín. Sau đó, cắt trái
-                    cây
-                  </h1>
-                  <Image
-                  src="/salad.webp"
-                  width={200}
-                  height={100}
-                  className="inline-block"
-                  />
-                 <Image
-                  src="/salad.webp"
-                  width={200}
-                  height={100}
-                  className="inline-block"
-                  />
-                </div>
-              </div>
-              <div className="flex justify-between">
-                <h1>1</h1>
-                <div className="space-y-4">
-                  <h1>
-                    Loại bỏ vỏ chuối, vỏ kiwi, vỏ xoài chín. Sau đó, cắt trái
-                    cây
-                  </h1>
-                  <Image
-                  src="/salad.webp"
-                  width={200}
-                  height={100}
-                  className="inline-block"
-                  />
-                 <Image
-                  src="/salad.webp"
-                  width={200}
-                  height={100}
-                  className="inline-block"
-                  />
-                </div>
-              </div>
-              <div className="flex justify-between">
-                <h1>1</h1>
-                <div className="space-y-4">
-                  <h1>
-                    Loại bỏ vỏ chuối, vỏ kiwi, vỏ xoài chín. Sau đó, cắt trái
-                    cây
-                  </h1>
-                  <Image
-                  src="/salad.webp"
-                  width={200}
-                  height={100}
-                  className="inline-block"
-                  />
-                 <Image
-                  src="/salad.webp"
-                  width={200}
-                  height={100}
-                  className="inline-block"
-                  />
-                </div>
-              </div>
+
+        <div className=" w-[40%] space-y-5">
+          <div className="flex justify-between ">
+            <div className="h-8 w-8 rounded-full bg-darkgreen text-white flex items-center justify-center">
+              <span>1</span>
+            </div>
+            <div className="space-y-4">
+              <h1>
+                Loại bỏ vỏ chuối, vỏ kiwi, vỏ xoài chín. Sau đó, cắt trái cây
+              </h1>
+              <Image
+                src="/salad.webp"
+                width={200}
+                height={100}
+                className="inline-block"
+              />
+              <Image
+                src="/salad.webp"
+                width={200}
+                height={100}
+                className="inline-block"
+              />
+            </div>
           </div>
+          <div className="flex justify-between">
+            <div className="h-8 w-8 rounded-full bg-darkgreen text-white flex items-center justify-center">
+              <span>2</span>
+            </div>
+            <div className="space-y-4">
+              <h1>Củ dền gọt bỏ vỏ, cắt khối vuông. Yến mạch bạn có thể sử</h1>
+              <Image
+                src="/salad.webp"
+                width={200}
+                height={100}
+                className="inline-block"
+              />
+              <Image
+                src="/salad.webp"
+                width={200}
+                height={100}
+                className="inline-block"
+              />
+            </div>
+          </div>
+          <div className="flex justify-between">
+            <div className="h-8 w-8 rounded-full bg-darkgreen text-white flex items-center justify-center">
+              <span>3</span>
+            </div>
+            <div className="space-y-4">
+              <h1>Sau khi trái cây đông đá, cho tất cả vào máy xay bao</h1>
+              <Image
+                src="/salad.webp"
+                width={200}
+                height={100}
+                className="inline-block"
+              />
+              <Image
+                src="/salad.webp"
+                width={200}
+                height={100}
+                className="inline-block"
+              />
+            </div>
+          </div>
+        </div>
       </div>
       <div></div>
     </div>

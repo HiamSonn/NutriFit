@@ -4,7 +4,9 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SendIcon from '@mui/icons-material/Send';
 import Dish from "@/components/dish";
+import { useRouter } from "next/navigation";
 const meal = () => {
+  const router = useRouter(); 
   return (
     <div className="bg-white max-w-full overflow-hidden mt-10">
       <div className=" grid grid-cols-[0.5fr_11fr_0.5fr]">

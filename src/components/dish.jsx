@@ -1,8 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 const Dish = () => {
+  const router = useRouter();
   return (
-    <div className="bg-white border border-grayborder rounded-md p-4 max-w-[300px] space-y-5">
+    <div className="bg-white border border-grayborder rounded-md p-4 max-w-[300px] space-y-5 cursor-pointer" onClick={()=>router.push('/main-page/nutrition-page/meal/mealDetail')}>
       <Image src="/salad.webp" width={300} height={200} />
       <h1 className="font-bold text-lg text-darkgreen">Salad cá hồi</h1>
       <div className="text-gray text-sm">200kcal</div>
