@@ -28,14 +28,14 @@ export default function PlanPage() {
                     <input
                       type="text"
                       disabled={!isEditing}
-                      className={`p-1 outline-none bg-white text-center w-11 ${
+                      className={`p-1 outline-none bg-white text-center w-11 text-lightgreen ${
                         isEditing
                           ? "border border-grayborder rounded-md"
                           : "border-none"
                       }`}
                       value={100}
                     />
-                    <span>kg</span>
+                    <span className="text-lightgreen">kg</span>
                     <EditIcon
                       className="text-black cursor-pointer"
                       onClick={() => setIsEditing(!isEditing)}
