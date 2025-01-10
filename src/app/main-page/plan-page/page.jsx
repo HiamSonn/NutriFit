@@ -1,12 +1,9 @@
 "use client";
 import { useState } from "react";
-import EditIcon from "@mui/icons-material/Edit";
 import { useRouter } from "next/navigation";
 export default function PlanPage() {
   const router = useRouter();
-  const [isEditingTime, setIsEditingTime] = useState(false);
-  const [isEditingBudget, setIsEditingBudget] = useState(false);
-  const [isEditingCookingTime, setIsEditingCookingTime] = useState(false);
+  const [luyentap, setLuyentap] = useState(30);
   const [budget, setBudget] = useState(200000);
   const [cookingTime, setCookingTime] = useState(30);
   const [chanThuong, setChanThuong] = useState(["Đầu gối phải", "Tay trái"]);
@@ -18,7 +15,7 @@ export default function PlanPage() {
   const [themChanThuong, setThemChanThuong] = useState("");
   const [themBenhLyNen, setThemBenhLyNen] = useState("");
   const handleBudgetChange = (e) => {
-    // Remove all non-digit characters
+   
     const numericValue = e.target.value.replace(/[^0-9]/g, '');
     setBudget(e.target.value)
     setBudget(Number(numericValue));
@@ -169,27 +166,14 @@ export default function PlanPage() {
                 <div className="flex items-center gap-2">
                   <input
                     type="text"
-                    disabled={!isEditingTime}
-                    className={`p-2 outline-none bg-white text-center w-11 text-gray ${
-                      isEditingTime
-                        ? "border border-grayborder rounded-md"
-                        : "border-none"
-                    }`}
-                    value={30}
+                    
+                    className="p-2 outline-none bg-white text-center w-11 text-gray border-none"
+                     
+                    value={luyentap}
+                    onChange={(e) => setLuyentap(e.target.value)}
                   />
-                  <span>phút</span>
-                  <EditIcon
-                    className="text-black cursor-pointer"
-                    onClick={() => setIsEditingTime(!isEditingTime)}
-                    sx={{
-                      fontSize: {
-                        xs: "14px",
-                        sm: "16px",
-                        md: "20px",
-                        lg: "24px",
-                      },
-                    }}
-                  />
+                  <span className="text-gray">phút</span>
+                  
                 </div>
               </div>
               <div className="flex justify-between">
@@ -290,29 +274,14 @@ export default function PlanPage() {
                 <div className="flex items-center gap-2">
                   <input
                     type="text"
-                    disabled={!isEditingBudget}
-                    className={`p-2 outline-none bg-white  min-w-[100px] max-w-[130px] text-end text-gray ${
-                      isEditingBudget
-                        ? "border border-grayborder rounded-md"
-                        : "border-none"
-                    }`}
+                   
+                    className="p-2 outline-none bg-white  min-w-[100px] max-w-[130px] text-end text-gray border-none"
                     value={budget.toLocaleString('vi-VN')}
                     
                     onChange={handleBudgetChange}
                   />
                   <span className="text-gray">đ</span>
-                  <EditIcon
-                    className="text-black cursor-pointer"
-                    onClick={() => setIsEditingBudget(!isEditingBudget)}
-                    sx={{
-                      fontSize: {
-                        xs: "14px",
-                        sm: "16px",
-                        md: "20px",
-                        lg: "24px",
-                      },
-                    }}
-                  />
+                  
                 </div>
               </div>
               <div className="flex justify-between">
@@ -320,30 +289,14 @@ export default function PlanPage() {
                 <div className="flex items-center gap-2">
                   <input
                     type="text"
-                    disabled={!isEditingCookingTime}
-                    className={`p-2 outline-none bg-white text-center w-11 text-gray ${
-                      isEditingCookingTime
-                        ? "border border-grayborder rounded-md"
-                        : "border-none"
-                    }`}
+                   
+                    className="p-2 outline-none bg-white text-center w-11 text-gray border-none"
+                      
                     value={cookingTime}
                     onChange={(e) => setCookingTime(e.target.value)}
                   />
                   <span className="text-gray">phút</span>
-                  <EditIcon
-                    className="text-black cursor-pointer"
-                    onClick={() =>
-                      setIsEditingCookingTime(!isEditingCookingTime)
-                    }
-                    sx={{
-                      fontSize: {
-                        xs: "14px",
-                        sm: "16px",
-                        md: "20px",
-                        lg: "24px",
-                      },
-                    }}
-                  />
+                 
                 </div>
               </div>
               <div className="space-y-5 ">

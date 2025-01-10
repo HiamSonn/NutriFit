@@ -1,9 +1,8 @@
 "use client";
 import { useState } from "react";
-import EditIcon from "@mui/icons-material/Edit";
 import CheckIcon from "@mui/icons-material/Check";
 export default function PlanPage() {
-  const [isEditing, setIsEditing] = useState(false);
+ const [targeweight, setTargeweight] = useState(100);
   return (
     <div className="grid grid-cols-[0.5fr_11fr_0.5fr] mt-10">
       <div></div>
@@ -27,27 +26,14 @@ export default function PlanPage() {
                   <div className="flex items-center gap-2">
                     <input
                       type="text"
-                      disabled={!isEditing}
-                      className={`p-1 outline-none bg-white text-center w-11 text-lightgreen ${
-                        isEditing
-                          ? "border border-grayborder rounded-md"
-                          : "border-none"
-                      }`}
-                      value={100}
+                     
+                      className="p-1 outline-none bg-white text-center max-w-[100px] text-lightgreen"
+                        
+                      value={targeweight}
+                      onChange={(e) => setTargeweight(e.target.value)}
                     />
                     <span className="text-lightgreen">kg</span>
-                    <EditIcon
-                      className="text-black cursor-pointer"
-                      onClick={() => setIsEditing(!isEditing)}
-                      sx={{
-                        fontSize: {
-                          xs: "14px",
-                          sm: "16px",
-                          md: "20px",
-                          lg: "24px",
-                        },
-                      }}
-                    />
+                   
                   </div>
                 </div>
 

@@ -8,19 +8,24 @@ import { useRouter } from "next/navigation";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-const Meal = () => {
+import { useState } from 'react';
+const Meal = ({bua}) => {
+  const [isFavorite, setIsFavorite] = useState(false);
+  const handleFavoriteClick = (e) => {
+    e.stopPropagation();
+    setIsFavorite(!isFavorite);
+  };
   const router = useRouter();
   return (
     <div
-      className="bg-lightgray rounded-md lg:p-4 md:p-3 p-2 cursor-pointer"
+      className="bg-lightgray rounded-md lg:p-4 md:p-3 p-2 cursor-pointer  "
       onClick={() => router.push("/main-page/nutrition-page/meal")}
     >
       {/* Header content */}
       <div className="flex justify-between">
         <div className="inline-block space-x-2">
           <span className="text-darkgreen font-bold lg:text-lg md:text-base sm:text-sm text-sm">
-            Sáng
+           {bua}
           </span>
           <span className="text-gray lg:text-sm md:text-sm sm:text-xs text-xs">
             (5-8 am)
@@ -30,12 +35,13 @@ const Meal = () => {
   sx={{ 
     fontSize: {
       xs: '16px',
-      sm: '18px',
-      md: '20px',
-      lg: '24px'
+      sm: '20px',
+      md: '24px',
+      lg: '28px'
     }
   }}
-  className="text-darkgreen"
+  className={`cursor-pointer ${isFavorite ? 'text-lightgreen' : 'text-darkgreen'}`}
+  onClick={handleFavoriteClick}
 />
       </div>
 

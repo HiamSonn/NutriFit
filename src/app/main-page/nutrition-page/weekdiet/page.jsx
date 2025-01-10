@@ -13,11 +13,11 @@ const weekdiet = () => {
     <div className="bg-white max-w-full overflow-hidden mt-10">
       <div className=" grid grid-cols-[0.5fr_11fr_0.5fr]">
         <div></div>
-        <div className="lg:space-y-20 md:space-y-12 sm:space-y-8 space-y-4">
+        <div className="lg:space-y-14 md:space-y-12 sm:space-y-8 space-y-4">
           <h1 className="text-darkgreen font-bold lg:text-2xl md:text-lg sm:text-base text-sm">
             Thực đơn tuần này
           </h1>
-          <div className="border border-grayborder lg:mt-10 md:mt-8 sm:mt-6 mt-4  lg:p-4 md:p-3 p-2 rounded-md">
+          <div className="shadow-md lg:mt-10 md:mt-8 sm:mt-6 mt-4  lg:p-4 md:p-3 p-2 rounded-md ">
             <h1 className="text-darkgreen font-bold lg:text-2xl md:text-lg sm:text-base text-sm text-center">
               Nguyên liệu
             </h1>
@@ -85,7 +85,7 @@ const weekdiet = () => {
               }
             `}</style>
           </div>
-          <div className="border border-grayborder lg:mt-10 md:mt-8 sm:mt-6 mt-4  p-4 rounded-md">
+          <div className="shadow-md lg:mt-10 md:mt-8 sm:mt-6 mt-4  p-4 rounded-md">
             <h1 className="text-darkgreen font-bold lg:text-2xl md:text-lg sm:text-base text-sm text-center">Thực đơn</h1>
             {map.map((item,index)=>(
                 <DayMeal key={index} day={item}/>

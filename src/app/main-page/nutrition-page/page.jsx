@@ -48,9 +48,12 @@ export default function NutritionPage() {
           </div>
           <div>
          <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-2  gap-4">
-            <Meal/>
-            <Meal/>
-            <Meal/>
+            <Meal
+            bua="Sáng" />
+            <Meal
+            bua="Trưa"/>
+            <Meal
+            bua="Tối"/>
          </div>
         </div>
        
