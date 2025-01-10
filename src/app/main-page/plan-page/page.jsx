@@ -158,7 +158,7 @@ export default function PlanPage() {
             <div className="shadow-md lg:p-10 md:p-8 sm:p-6 p-3 rounded-md space-y-4">
               <div className="flex justify-between">
                 <span>Cường độ luyện tập</span>
-                <select className="border rounded-md p-2 border-grayborder">
+                <select className="border rounded-md p-2 border-grayborder text-gray">
                   <option value="1">Nhẹ</option>
                   <option value="2">Trung bình</option>
                   <option value="3">Mạnh</option>
@@ -170,7 +170,7 @@ export default function PlanPage() {
                   <input
                     type="text"
                     disabled={!isEditingTime}
-                    className={`p-2 outline-none bg-white text-center w-11 ${
+                    className={`p-2 outline-none bg-white text-center w-11 text-gray ${
                       isEditingTime
                         ? "border border-grayborder rounded-md"
                         : "border-none"
@@ -194,7 +194,7 @@ export default function PlanPage() {
               </div>
               <div className="flex justify-between">
                 <span>Không gian luyện tập</span>
-                <select className="border rounded-md p-2 border-grayborder">
+                <select className="border rounded-md p-2 border-grayborder text-gray">
                   <option value="1">Hẹp</option>
                   <option value="2">Trung bình</option>
                   <option value="3">Rộng</option>
@@ -202,7 +202,7 @@ export default function PlanPage() {
               </div>
               <div className="flex justify-between">
                 <span>Dụng cụ luyện tập</span>
-                <select className="border rounded-md p-2 border-grayborder">
+                <select className="border rounded-md p-2 border-grayborder text-gray">
                   <option value="1">Hạn chế</option>
                   <option value="2">Trung bình</option>
                   <option value="3">Thoải mái</option>
@@ -215,7 +215,7 @@ export default function PlanPage() {
                     key={index}
                     className="flex items-center gap-2 justify-between"
                   >
-                    <span>{item}</span>
+                    <span className="text-gray">{item}</span>
                     <button
                       onClick={() => handleRemoveChanThuong(index)}
                       className="rounded-full bg-grayborder text-black cursor-pointer w-6 h-6 flex items-center justify-center"
@@ -228,7 +228,7 @@ export default function PlanPage() {
                   <input
                     value={themChanThuong}
                     type="text"
-                    className="border rounded-md p-2 border-grayborder "
+                    className="border rounded-md p-2 border-grayborder text-gray "
                     placeholder="Thêm chấn thương..."
                     onChange={(e) => setThemChanThuong(e.target.value)}
                   />
@@ -247,7 +247,7 @@ export default function PlanPage() {
                     key={index}
                     className="flex items-center gap-2 justify-between"
                   >
-                    <span>{item}</span>
+                    <span className="text-gray">{item}</span>
                     <button
                       onClick={() => handleRemoveBenhLyNen(index)}
                       className="rounded-full bg-grayborder text-black cursor-pointer w-6 h-6 flex items-center justify-center"
@@ -260,7 +260,7 @@ export default function PlanPage() {
                   <input
                     value={themBenhLyNen}
                     type="text"
-                    className="border rounded-md p-2 border-grayborder "
+                    className="border rounded-md p-2 border-grayborder text-gray "
                     placeholder="Thêm bệnh lý nền..."
                     onChange={(e) => setThemBenhLyNen(e.target.value)}
                   />
@@ -291,7 +291,7 @@ export default function PlanPage() {
                   <input
                     type="text"
                     disabled={!isEditingBudget}
-                    className={`p-2 outline-none bg-white  min-w-[100px] max-w-[130px] text-end ${
+                    className={`p-2 outline-none bg-white  min-w-[100px] max-w-[130px] text-end text-gray ${
                       isEditingBudget
                         ? "border border-grayborder rounded-md"
                         : "border-none"
@@ -300,7 +300,7 @@ export default function PlanPage() {
                     
                     onChange={handleBudgetChange}
                   />
-                  <span>đ</span>
+                  <span className="text-gray">đ</span>
                   <EditIcon
                     className="text-black cursor-pointer"
                     onClick={() => setIsEditingBudget(!isEditingBudget)}
@@ -321,7 +321,7 @@ export default function PlanPage() {
                   <input
                     type="text"
                     disabled={!isEditingCookingTime}
-                    className={`p-2 outline-none bg-white text-center w-11 ${
+                    className={`p-2 outline-none bg-white text-center w-11 text-gray ${
                       isEditingCookingTime
                         ? "border border-grayborder rounded-md"
                         : "border-none"
@@ -329,7 +329,7 @@ export default function PlanPage() {
                     value={cookingTime}
                     onChange={(e) => setCookingTime(e.target.value)}
                   />
-                  <span>phút</span>
+                  <span className="text-gray">phút</span>
                   <EditIcon
                     className="text-black cursor-pointer"
                     onClick={() =>
@@ -353,7 +353,7 @@ export default function PlanPage() {
                     key={index}
                     className="flex items-center gap-2 justify-between"
                   >
-                    <span>{item}</span>
+                    <span className="text-gray">{item}</span>
                     <button
                       onClick={() => handleRemoveYeuthich(index)}
                       className="rounded-full bg-grayborder text-black cursor-pointer w-6 h-6 flex items-center justify-center"
@@ -385,7 +385,7 @@ export default function PlanPage() {
                     key={index}
                     className="flex items-center gap-2 justify-between"
                   >
-                    <span>{item}</span>
+                    <span className="text-gray">{item}</span>
                     <button
                       onClick={() => handleRemoveDiung(index)}
                       className="rounded-full bg-grayborder text-black cursor-pointer w-6 h-6 flex items-center justify-center"
