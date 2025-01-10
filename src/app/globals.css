@@ -10,7 +10,18 @@
     --foreground: #ededed;
   }
 }
-
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+  }
+}
 body {
   
   font-family: Arial, Helvetica, sans-serif;

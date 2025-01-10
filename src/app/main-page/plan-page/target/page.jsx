@@ -51,8 +51,8 @@ export default function PlanPage() {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between ">
-                  <h1>Thời gian hoàn thành</h1>
+                <div className="flex items-center justify-between text-gray lg:text-lg md:text-base sm:text-sm text-xs ">
+                  <h1  >Thời gian hoàn thành</h1>
                   <select className="border rounded-md p-2 border-grayborder">
                     <option value="1">Nhanh</option>
                     <option value="2">Trung bình</option>
@@ -97,9 +97,59 @@ export default function PlanPage() {
           </div>
           <div className="space-y-10">
             <h1 className="text-darkgreen font-bold lg:text-2xl md:text-lg sm:text-base text-sm">Lịch sử</h1>
-            <div className="lg:p-10 md:p-8 sm:p-6 p-3 rounded-md shadow-md ">
+            <div className="lg:p-10 md:p-8 sm:p-6 p-3 rounded-md shadow-md
+             lg:max-h-[500px] max-h-[250px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray scrollbar-track-gray-100
+             lg:space-y-10 md:space-y-8 sm:space-y-6 space-y-4">
               <div className="flex justify-between lg:text-xl md:text-lg sm:text-base text-sm">
-                <div className="space-y-5">
+                <div className="space-y-2">
+                  <h1>17 Th11 - 23 Th11</h1>
+                  <h1 className="text-lightgreen font-semibold">Đạt 70kg</h1>
+                  <h1 className="text-gray">Thời gian 3 tháng</h1>
+                </div>
+                <div className="flex items-center ">
+                    <div className="rounded-full border border-lightgreen w-10 h-10 flex items-center justify-center">
+                      <CheckIcon className="text-lightgreen font-bold  w-10 h-10" />
+                    </div>
+                </div>
+              </div>
+              <div className="flex justify-between lg:text-xl md:text-lg sm:text-base text-sm">
+                <div className="space-y-2">
+                  <h1>17 Th11 - 23 Th11</h1>
+                  <h1 className="text-lightgreen font-semibold">Đạt 70kg</h1>
+                  <h1 className="text-gray">Thời gian 3 tháng</h1>
+                </div>
+                <div className="flex items-center ">
+                    <div className="rounded-full border border-lightgreen w-10 h-10 flex items-center justify-center">
+                      <CheckIcon className="text-lightgreen font-bold  w-10 h-10" />
+                    </div>
+                </div>
+              </div>
+              <div className="flex justify-between lg:text-xl md:text-lg sm:text-base text-sm">
+                <div className="space-y-2">
+                  <h1>17 Th11 - 23 Th11</h1>
+                  <h1 className="text-lightgreen font-semibold">Đạt 70kg</h1>
+                  <h1 className="text-gray">Thời gian 3 tháng</h1>
+                </div>
+                <div className="flex items-center ">
+                    <div className="rounded-full border border-lightgreen w-10 h-10 flex items-center justify-center">
+                      <CheckIcon className="text-lightgreen font-bold  w-10 h-10" />
+                    </div>
+                </div>
+              </div>
+              <div className="flex justify-between lg:text-xl md:text-lg sm:text-base text-sm">
+                <div className="space-y-2">
+                  <h1>17 Th11 - 23 Th11</h1>
+                  <h1 className="text-lightgreen font-semibold">Đạt 70kg</h1>
+                  <h1 className="text-gray">Thời gian 3 tháng</h1>
+                </div>
+                <div className="flex items-center ">
+                    <div className="rounded-full border border-lightgreen w-10 h-10 flex items-center justify-center">
+                      <CheckIcon className="text-lightgreen font-bold  w-10 h-10" />
+                    </div>
+                </div>
+              </div>
+              <div className="flex justify-between lg:text-xl md:text-lg sm:text-base text-sm">
+                <div className="space-y-2">
                   <h1>17 Th11 - 23 Th11</h1>
                   <h1 className="text-lightgreen font-semibold">Đạt 70kg</h1>
                   <h1 className="text-gray">Thời gian 3 tháng</h1>
