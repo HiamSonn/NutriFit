@@ -94,7 +94,7 @@ export default function WorkoutList() {
                   Cài đặt luyện tập
                 </h3>
                 <p className="text-gray-500 text-sm mt-1">
-                  Âm nhạc& Huấn luyện viên& Bộ hen giờ...
+                  Âm nhạc & Huấn luyện viên & Bộ hẹn giờ...
                 </p>
               </div>
               <button

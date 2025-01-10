@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 export default function MainPageLayout({ children }) {
   const [isClient, setIsClient] = useState(false); // Quản lý trạng thái client-side render
@@ -70,16 +71,13 @@ export default function MainPageLayout({ children }) {
           </Link>
 
           {/* Logout Button */}
-          <button
+          <LogoutIcon
             onClick={() => {
               // Thực hiện logic logout ở đây (ví dụ: xóa token, session)
               // Sau đó điều hướng về màn hình login
               window.location.href = "/login"; // Điều hướng tới màn hình đăng nhập
             }}
-            className="hover:underline text-black"
-          >
-            Đăng xuất
-          </button>
+          />
         </nav>
       </header>
 
